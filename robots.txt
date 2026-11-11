@@ -1,0 +1,6 @@
+# Les moteurs de recherche peuvent lire tout le site.
+User-agent: *
+Allow: /
+
+# Quand le domaine sera choisi, ajouter par exemple :
+# Sitemap: https://www.nexeltech.ca/sitemap.xml

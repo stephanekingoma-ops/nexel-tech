@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NeXel Tech · Réparation, logiciels, sites web et IA à Toronto</title>
+<meta name="description" content="NeXel Tech répare vos ordinateurs, conçoit vos logiciels et vos sites web, intègre l'IA et pilote vos projets en Scrum. Toronto et à distance. +1 (438) 220-7582.">
+<meta name="theme-color" content="#060d24">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NeXel Tech">
+<meta property="og:description" content="Réparation d'ordinateurs, logiciels sur mesure, sites web et intégration de l'IA. Toronto et à distance.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css?v=1">
+<script src="assets/js/boot.js?v=1"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.4" d="M4.2 1.8h2.1l1 3-1.5 1.1a8 8 0 0 0 4.3 4.3l1.1-1.5 3 1v2.1c0 .7-.6 1.3-1.3 1.3A12 12 0 0 1 2.9 3.1c0-.7.6-1.3 1.3-1.3z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 104 112"><polygon points="72,0 104,0 34,112 2,112" fill="#0a8fae"/><polygon points="2,0 34,0 104,112 72,112" fill="#1bcfef"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 18 18"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M2 9h13M10 4l5 5-5 5"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="nav-logo" href="#top" data-i18n-attr="aria-label:nav.home" aria-label="NeXel Tech, retour en haut">NeXel <small>Tech</small></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#realisations" data-i18n="nav.work">Réalisations</a></li>
+      <li><a href="#methode" data-i18n="nav.method">Méthode</a></li>
+      <li><a href="#finops">FinOps</a></li>
+      <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-tel" href="tel:+14382207582"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>438 220-7582</a>
+      <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Langue">
+        <button type="button" id="langFr" lang="fr" aria-pressed="true">FR</button>
+        <button type="button" id="langEn" lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn small" href="#contact"><span class="cta-long" data-i18n="cta">Demander un diagnostic</span><span class="cta-short">Diagnostic</span></a>
+    </div>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Sections">
+  <div class="rail-line"><i class="rail-fill" id="railFill"></i></div>
+  <ol>
+    <li><a href="#top"><span data-i18n="rl0">Accueil</span></a></li>
+    <li><a href="#services"><span>Services</span></a></li>
+    <li><a href="#realisations"><span data-i18n="nav.work">Réalisations</span></a></li>
+    <li><a href="#methode"><span data-i18n="nav.method">Méthode</span></a></li>
+    <li><a href="#finops"><span>FinOps</span></a></li>
+    <li><a href="#apropos"><span data-i18n="nav.about">À propos</span></a></li>
+    <li><a href="#contact"><span>Contact</span></a></li>
+  </ol>
+</nav>
+
+<main id="top">
+  <!-- ============ HÉROS ============ -->
+  <section class="hero" id="hero" aria-label="NeXel Tech">
+    <canvas id="depth" aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <p class="status rise">
+        <span><i class="led"></i><span data-i18n="st.on">Système en ligne</span></span>
+        <span>Toronto, ON · <time id="clock">--:--:--</time></span>
+      </p>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="rise" data-i18n="h.title">Vos ordinateurs réparés, vos logiciels construits, vos projets <em>livrés</em>.</h1>
+          <p class="lede rise" data-i18n="h.lede">Vos ordinateurs réparés, vos logiciels construits, l'IA intégrée à vos outils. Un seul interlocuteur, du câble au code.</p>
+          <div class="hero-ctas rise">
+            <a class="btn" href="#contact" data-i18n="cta">Demander un diagnostic</a>
+            <a class="btn ghost" href="tel:+14382207582"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>+1 (438) 220-7582</a>
+          </div>
+        </div>
+        <div class="hero-emblem rise">
+          <div class="emblem" id="emblem" role="img" data-i18n-attr="aria-label:emblem.aria" aria-label="Emblème NeXel Tech en trois dimensions, cliquez pour l'animer">
+            <div class="orbit o1" aria-hidden="true"><i></i></div>
+            <div class="orbit o2" aria-hidden="true"><i></i></div>
+            <div class="emblem-3d" id="emblem3d" aria-hidden="true"></div>
+            <div class="eshadow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scrollcue" href="#services" aria-hidden="true" tabindex="-1"><span data-i18n="scroll.hint">Défiler pour explorer</span><i></i></a>
+    </div>
+  </section>
+
+  <!-- ============ TERMINAL ============ -->
+  <section class="termsec" aria-label="Console NeXel Tech">
+    <div class="wrap">
+      <div class="term glass rv" data-tilt="5" data-i18n-attr="aria-label:t.aria" aria-label="Exemple de session de diagnostic">
+        <div class="term-bar"><span data-i18n="t.title">nexel@atelier : ~</span><span class="live"><i></i><span data-i18n="t.live">EN LIGNE</span></span></div>
+        <pre class="term-body" id="term"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <p class="eyebrow"><span class="ref">01</span>Services</p>
+        <h2 data-i18n="s.h2">Quatre composants, une seule carte.</h2>
+        <p class="lede" data-i18n="s.lede">Du poste qui ne démarre plus au logiciel qui manque à votre entreprise, chaque service se branche sur les autres. Vous n'avez pas à coordonner trois fournisseurs.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card glass rv wide" data-tilt="6">
+          <div class="card-main">
+            <p class="card-idx">U1 · <span data-i18n="u1.tag">Atelier</span></p>
+            <h3 data-i18n="u1.h">Réparation et maintenance</h3>
+            <p data-i18n="u1.p">Diagnostic, remplacement de pièces, installation de systèmes d'exploitation, problèmes de Wi-Fi, sauvegarde et récupération de données. Sur place ou à distance.</p>
+            <ul class="tags"><li>Windows</li><li>macOS</li><li>Linux</li><li data-i18n="u1.t4">Sauvegarde nuage</li></ul>
+          </div>
+          <div class="viz" data-i18n-attr="aria-label:u1.aria" aria-label="Banc de test d'un ordinateur, exemple">
+            <div class="bench">
+              <div class="bench-row"><span>CPU</span><div class="bar" style="--v:.62;--d:0s"></div><b>OK</b></div>
+              <div class="bench-row"><span>RAM</span><div class="bar" style="--v:.48;--d:.35s"></div><b>OK</b></div>
+              <div class="bench-row w"><span>SSD</span><div class="bar" style="--v:.91;--d:.7s"></div><b data-i18n="u1.rep">REMPLACÉ</b></div>
+              <div class="bench-row"><span>BATT</span><div class="bar" style="--v:.77;--d:1.05s"></div><b>OK</b></div>
+              <div class="bench-row"><span>WI-FI</span><div class="bar" style="--v:.84;--d:1.4s"></div><b>OK</b></div>
+            </div>
+            <div class="bench-foot"><span data-i18n="u1.bench">Banc de test</span><span data-i18n="ex">exemple</span></div>
+          </div>
+        </article>
+
+        <article class="card glass rv" data-tilt="6">
+          <div class="card-main">
+            <p class="card-idx">U2 · <span data-i18n="u2.tag">Logiciel</span></p>
+            <h3 data-i18n="u2.h">Logiciels sur mesure</h3>
+            <div class="viz" data-i18n-attr="aria-label:u2.aria" aria-label="Extrait de code en cours d'exécution, exemple">
+<pre class="code" id="code" data-i18n="u2.code"><span><i class="k">def</i> facturer(client, heures):</span><span>    tarif = client.tarif_horaire</span><span>    total = heures * tarif</span><span>    <i class="k">if</i> client.taxable:</span><span>        total *= <i class="s">1.13</i>   <i class="m"># TVH Ontario</i></span><span>    <i class="k">return</i> Facture(client, total)</span></pre>
+              <div class="code-out" id="codeOut" data-i18n="u2.out">› 6 tests réussis</div>
+            </div>
+            <p data-i18n="u2.p">Applications de gestion, outils internes, automatisation de vos tâches répétitives. On part de votre façon de travailler.</p>
+            <ul class="tags"><li data-i18n="u2.t1">Applications web</li><li data-i18n="u2.t2">Outils internes</li><li data-i18n="u2.t3">Bases de données</li></ul>
+          </div>
+        </article>
+
+        <article class="card glass rv" data-tilt="6">
+          <div class="card-main">
+            <p class="card-idx">U3 · Web</p>
+            <h3 data-i18n="u3.h">Sites web</h3>
+            <div class="viz" data-i18n-attr="aria-label:u3.aria" aria-label="Maquette de site en construction">
+              <div class="wf-url" data-i18n="u3.url">votre-entreprise.ca</div>
+              <div class="wf">
+                <div class="blk full" style="--d:0s"></div>
+                <div class="blk full hero-b" style="--d:.4s"></div>
+                <div class="blk tall" style="--d:.8s"></div>
+                <div class="blk tall" style="--d:1s"></div>
+                <div class="blk tall" style="--d:1.2s"></div>
+                <div class="blk full" style="--d:1.6s"></div>
+              </div>
+            </div>
+            <p data-i18n="u3.p">Sites vitrines, pages de vente, boutiques en ligne. Rapides sur téléphone, faciles à mettre à jour, pensés pour que vos clients vous contactent.</p>
+            <ul class="tags"><li data-i18n="u3.t1">Vitrine</li><li data-i18n="u3.t2">Boutique</li><li data-i18n="u3.t3">Référencement</li><li data-i18n="u3.t4">Hébergement</li></ul>
+          </div>
+        </article>
+
+        <article class="card glass rv wide flip" data-tilt="6">
+          <div class="viz graph" data-i18n-attr="aria-label:u4.aria" aria-label="Courriels, factures et formulaires passent par un modèle qui trie, résume et saisit">
+            <svg id="graph" viewBox="0 0 320 170" role="img" aria-hidden="true">
+              <g fill="none" stroke="#1d4480" stroke-width="1.5">
+                <path id="p1" d="M58 30 C110 30 110 85 140 85"/>
+                <path id="p2" d="M58 85 L140 85"/>
+                <path id="p3" d="M58 140 C110 140 110 85 140 85"/>
+                <path id="p4" d="M180 85 C210 85 210 30 262 30"/>
+                <path id="p5" d="M180 85 L262 85"/>
+                <path id="p6" d="M180 85 C210 85 210 140 262 140"/>
+              </g>
+              <g font-family="JetBrains Mono, monospace" font-size="10" fill="#93a9c9">
+                <text x="4" y="22" data-i18n="g1">Courriels</text><text x="4" y="77" data-i18n="g2">Factures</text><text x="4" y="132" data-i18n="g3">Formulaires</text>
+                <text x="316" y="22" text-anchor="end" data-i18n="g4">Tri</text><text x="316" y="77" text-anchor="end" data-i18n="g5">Résumé</text><text x="316" y="132" text-anchor="end" data-i18n="g6">Saisie CRM</text>
+              </g>
+              <g fill="#0a8fae"><rect x="50" y="26" width="8" height="8"/><rect x="50" y="81" width="8" height="8"/><rect x="50" y="136" width="8" height="8"/>
+                <rect x="262" y="26" width="8" height="8"/><rect x="262" y="81" width="8" height="8"/><rect x="262" y="136" width="8" height="8"/></g>
+              <rect x="140" y="66" width="40" height="38" fill="#0a1c46" stroke="#1bcfef" stroke-width="1.5"/>
+              <text x="160" y="89" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#1bcfef" data-i18n="u4.tag">IA</text>
+              <g fill="#1bcfef">
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="0s"><mpath href="#p1"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin=".9s"><mpath href="#p2"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.7s"><mpath href="#p3"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="1.3s"><mpath href="#p4"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin="2.1s"><mpath href="#p5"/></animateMotion></circle>
+                <circle r="3"><animateMotion dur="2.6s" repeatCount="indefinite" begin=".4s"><mpath href="#p6"/></animateMotion></circle>
+              </g>
+            </svg>
+          </div>
+          <div class="card-main">
+            <p class="card-idx">U4 · <span data-i18n="u4.tag">IA</span></p>
+            <h3 data-i18n="u4.h">Intégration de l'IA</h3>
+            <p data-i18n="u4.p">Assistants branchés sur vos outils, tri et résumé automatique des documents, flux d'automatisation entre vos applications. On automatise ce qui vous fait perdre du temps, et seulement ça.</p>
+            <ul class="tags"><li>Assistants</li><li data-i18n="b8">Automatisation</li><li>Zapier</li><li data-i18n="u4.t4">Formation</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BANDE CINÉTIQUE ============ -->
+  <div class="kinetic" id="kinetic" aria-hidden="true">
+    <div class="kin-row"><span data-i18n="kn1">Réparer</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span class="o" data-i18n="kn2">Construire</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="kn3">Livrer</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span class="o" data-i18n="kn4">Optimiser</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="kn1">Réparer</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span class="o" data-i18n="kn2">Construire</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span data-i18n="kn3">Livrer</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg><span class="o" data-i18n="kn4">Optimiser</span><svg class="kx" viewBox="0 0 104 112" aria-hidden="true"><use href="#i-x"/></svg></div>
+  </div>
+
+  <!-- ============ RÉALISATIONS ============ -->
+  <section id="realisations">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2 data-i18n="w.h2">Des plateformes pour l'Afrique et le Canada.</h2>
+        <p class="lede" data-i18n="w.lede">Santé, paiement, éducation, commerce : six projets choisis parmi les 37 domaines gérés par NeXel Tech. Chaque lien ouvre le site réel.</p>
+      </div>
+      <ul class="projects">
+        <li class="proj rv"><a href="https://vitaos.ca" target="_blank" rel="noopener">
+          <span class="proj-ref">S1</span><span class="proj-name">VitaOS</span>
+          <span class="proj-desc" data-i18n="w1">Plateforme de santé pour l'Afrique francophone et lusophone, avec des espaces patient, hôpital et pharmacie. Réalisée avec ITE SET RDC.</span>
+          <span class="proj-meta">vitaos.ca<span class="proj-tags"><span data-i18n="tg.health">Santé</span><span data-i18n="tg.plat">Plateforme</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+        <li class="proj rv"><a href="https://www.lipaxe.com" target="_blank" rel="noopener">
+          <span class="proj-ref">S2</span><span class="proj-name">LIPAXE</span>
+          <span class="proj-desc" data-i18n="w2">Paiement pour la RDC et l'Afrique centrale : portefeuilles multidevises, cartes virtuelles, paiement sans contact et tontines. En français, anglais et lingala.</span>
+          <span class="proj-meta">lipaxe.com<span class="proj-tags"><span>Fintech</span><span data-i18n="tg.multi">Multilingue</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+        <li class="proj rv"><a href="https://tekaa.app" target="_blank" rel="noopener">
+          <span class="proj-ref">S3</span><span class="proj-name">Teka'a</span>
+          <span class="proj-desc" data-i18n="w3">Logiciel de gestion de commerce pour l'Afrique : caisse, stock, achats, fidélité et rapports, avec ventes en CDF, USD, XOF, XAF et EUR.</span>
+          <span class="proj-meta">tekaa.app<span class="proj-tags"><span>SaaS</span><span data-i18n="tg.retail">Commerce</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+        <li class="proj rv"><a href="https://certicampus.my" target="_blank" rel="noopener">
+          <span class="proj-ref">S4</span><span class="proj-name">CertiCampus</span>
+          <span class="proj-desc" data-i18n="w4">Registre académique pour la RDC. Employeurs, ambassades et administrations vérifient un diplôme gratuitement ; les diplômés retrouvent leurs relevés et documents certifiés.</span>
+          <span class="proj-meta">certicampus.my<span class="proj-tags"><span data-i18n="tg.edu">Éducation</span><span data-i18n="tg.verif">Vérification</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+        <li class="proj rv"><a href="https://mykelasi.co" target="_blank" rel="noopener">
+          <span class="proj-ref">S5</span><span class="proj-name">My Kelasi</span>
+          <span class="proj-desc" data-i18n="w5">Gestion scolaire pour le primaire et le secondaire en RDC : vie scolaire, cotation, délibérations et documents officiels, finances, administration.</span>
+          <span class="proj-meta">mykelasi.co<span class="proj-tags"><span data-i18n="tg.edu">Éducation</span><span data-i18n="tg.webapp">Web et appli</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+        <li class="proj rv"><a href="https://www.canadafroculture.ca" target="_blank" rel="noopener">
+          <span class="proj-ref">S6</span><span class="proj-name">Canada Afro-Culture</span>
+          <span class="proj-desc" data-i18n="w6">Événements culturels de la diaspora africaine au Canada, avec publication automatique des articles du magazine La Découverte vers Facebook.</span>
+          <span class="proj-meta">canadafroculture.ca<span class="proj-tags"><span>Culture</span><span data-i18n="b8">Automatisation</span></span></span>
+          <span class="proj-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      </ul>
+
+      <div class="registry glass rv" id="registry">
+        <div class="reg-num">+<span id="regNum" data-count="31">31</span></div>
+        <div class="reg-text">
+          <strong data-i18n="r.title">autres domaines hébergés et gérés par NeXel Tech.</strong>
+          <p data-i18n="r.p">37 domaines au total, dont les six projets présentés ci-dessus.</p>
+        </div>
+        <div class="leds-wrap">
+          <div class="leds" id="leds" aria-hidden="true"></div>
+          <div class="leds-key"><span><i style="background:#1bcfef"></i><span data-i18n="r.k1">Présentés</span></span><span><i style="background:#0a8fae"></i><span data-i18n="r.k2">Hébergés</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MÉTHODE ============ -->
+  <section id="methode">
+    <div class="wrap method">
+      <div class="rv">
+        <h2 data-i18n="m.h2">Vous voyez le produit avancer chaque semaine.</h2>
+        <p class="lede" data-i18n="m.lede">Chaque projet logiciel ou web est piloté en Scrum. Stéphane y tient un seul rôle : Scrum Master certifié pour faire avancer l'équipe, ou Product Owner pour porter vos priorités. Jamais les deux sur le même projet, pour que chaque rôle garde toute son efficacité. Le travail est découpé en courts sprints, et chaque sprint se termine par une démonstration de ce qui fonctionne.</p>
+        <ol class="steps">
+          <li><div><strong data-i18n="st1">Diagnostic</strong><span data-i18n="st1d">On écoute votre besoin et on regarde l'existant. Vous repartez avec une estimation claire.</span></div></li>
+          <li><div><strong data-i18n="st2">Carnet de produit</strong><span data-i18n="st2d">Les fonctionnalités sont listées et classées par valeur pour vous. Vous décidez de l'ordre.</span></div></li>
+          <li><div><strong>Sprints</strong><span data-i18n="st3d">Une à deux semaines de développement, puis une revue où vous testez le résultat.</span></div></li>
+          <li><div><strong data-i18n="st4">Livraison et suivi</strong><span data-i18n="st4d">Mise en ligne, formation de votre équipe, maintenance par la suite.</span></div></li>
+        </ol>
+      </div>
+
+      <div class="sprint glass rv" data-tilt="4" data-i18n-attr="aria-label:sp.aria" aria-label="Tableau de sprint animé, exemple">
+        <div class="sprint-head"><span data-i18n="sp.title">Tableau de sprint · <b>exemple</b></span><span>Sprint 3 · <span data-i18n="sp.day">jour</span> <b id="day">6</b> / 10</span></div>
+        <div class="burn"><i id="burn"></i></div>
+        <div class="lanes" id="lanes">
+          <div class="lane" data-l="0"><h4><span data-i18n="l0">À faire</span> <span class="n"></span></h4>
+            <div class="tk" data-id="5"><small>NX-25</small><span data-i18n="k5">Tests sur téléphone</span></div>
+            <div class="tk" data-id="6"><small>NX-26</small><span data-i18n="k6">Mise en ligne</span></div>
+          </div>
+          <div class="lane" data-l="1"><h4><span data-i18n="l1">En cours</span> <span class="n"></span></h4>
+            <div class="tk" data-id="3"><small>NX-23</small><span data-i18n="k3">Paiement en ligne</span></div>
+            <div class="tk" data-id="4"><small>NX-24</small><span data-i18n="k4">Formulaire de contact</span></div>
+          </div>
+          <div class="lane" data-l="2"><h4><span data-i18n="l2">Revue</span> <span class="n"></span></h4>
+            <div class="tk" data-id="2"><small>NX-22</small><span data-i18n="u1.t4">Sauvegarde nuage</span></div>
+          </div>
+          <div class="lane" data-l="3"><h4><span data-i18n="l3">Fait</span> <span class="n"></span></h4>
+            <div class="tk" data-id="1"><small>NX-21</small><span data-i18n="k1">Page d'accueil</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINOPS (pleine largeur) ============ -->
+  <section id="finops">
+    <div class="wrap">
+      <div class="fin-head rv">
+        <h2 data-i18n="f.h2">Payez le nuage pour ce que vous utilisez.</h2>
+        <p class="lede" data-i18n="f.lede">Une facture infonuagique grossit souvent sans que personne ne le remarque : serveurs oubliés, machines trop puissantes, stockage jamais nettoyé. La démarche FinOps rend ces coûts visibles et les ramène à ce dont vous avez besoin.</p>
+        <ul class="fin-list">
+          <li data-i18n="f.l1"><b>Inventaire et étiquetage</b> de chaque ressource, par projet et par équipe</li>
+          <li data-i18n="f.l2"><b>Redimensionnement</b> des serveurs trop gros et arrêt de ceux qui dorment</li>
+          <li data-i18n="f.l3"><b>Engagements et réservations</b> là où l'usage est stable</li>
+          <li data-i18n="f.l4"><b>Alertes de budget</b> et rapport mensuel lisible</li>
+        </ul>
+      </div>
+      <div class="chart glass rv" data-tilt="4">
+        <div class="chart-top">
+          <span class="silk" data-i18n="f.chart">Facture nuage · 12 mois</span>
+          <div class="seg" role="group" data-i18n-attr="aria-label:f.group" aria-label="Afficher la facture">
+            <button type="button" id="bBefore" aria-pressed="true" data-i18n="f.before">Avant</button>
+            <button type="button" id="bAfter" aria-pressed="false" data-i18n="f.after">Après FinOps</button>
+          </div>
+        </div>
+        <svg id="finChart" viewBox="0 0 600 270" role="img" data-i18n-attr="aria-label:f.aria" aria-label="Graphique : la part de ressources payées mais inutilisées diminue après l'optimisation">
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="7" height="7" fill="#0a1c46"/><line x1="0" y1="0" x2="0" y2="7" stroke="#f2b544" stroke-width="2"/>
+            </pattern>
+          </defs>
+          <g id="grid" stroke="#1d4480" stroke-width="1"></g>
+          <path id="aWaste" fill="url(#hatch)" stroke="#f2b544" stroke-width="1.5"/>
+          <path id="aUsed" fill="#0e7f9e" stroke="#1bcfef" stroke-width="1.5"/>
+          <g id="xlab" font-family="JetBrains Mono, monospace" font-size="11" fill="#93a9c9" text-anchor="middle"></g>
+        </svg>
+        <div class="legend"><span><i style="background:#0e7f9e;border:1px solid #1bcfef"></i><span data-i18n="f.used">Ressources utilisées</span></span><span><i style="background:repeating-linear-gradient(45deg,#f2b544 0 2px,#0a1c46 2px 6px);border:1px solid #f2b544"></i><span data-i18n="f.waste">Payées mais inutilisées</span></span><span class="note" data-i18n="f.note">Illustration du principe, sans données de client réelles.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ À PROPOS ============ -->
+  <section id="apropos">
+    <div class="wrap about">
+      <figure class="portrait rv">
+        <div class="pframe" data-tilt="5"><img src="assets/img/stephane-kingoma.jpg" width="760" height="951" alt="Portrait de Stéphane Kingoma" data-i18n-attr="alt:a.alt"><span class="scanl"></span></div>
+        <figcaption class="silk"><span class="ref">Q1</span><span data-i18n="a.label">Fondateur</span></figcaption>
+      </figure>
+      <div class="rv">
+        <p class="name">Stéphane Kingoma</p>
+        <div class="roles"><span>Scrum Master</span><span>Product Owner</span><span>FinOps</span><span data-i18n="b7">Intégration IA</span></div>
+        <div class="body">
+          <p data-i18n="a.p1">Avant de fonder NeXel Tech, Stéphane a passé des années au plus près des machines : pannes, réseaux Wi-Fi, installation de systèmes, sauvegardes sur le nuage d'entreprise. Il a ensuite coordonné des projets produits et accompagné l'implantation d'un logiciel de suivi de camions pour une entreprise de transport en Zambie.</p>
+          <p data-i18n="a.p2">Cette double culture, terrain et gestion de produit, est la base de NeXel Tech. Basé à Toronto, il travaille avec des clients au Canada et en Afrique.</p>
+        </div>
+      </div>
+      <div class="bom-wrap glass rv">
+        <table class="bom">
+          <caption data-i18n="bom.cap">Nomenclature · certifications</caption>
+          <thead><tr><th scope="col" data-i18n="bom.ref">Réf.</th><th scope="col">Certification</th><th scope="col" data-i18n="bom.iss">Émetteur</th></tr></thead>
+          <tbody id="bomBody">
+            <tr><td>C1</td><td>Professional Scrum Master I (PSM I)</td><td>Scrum.org</td></tr>
+            <tr><td>C2</td><td>Agile Project Management</td><td>Google</td></tr>
+            <tr><td>C3</td><td>L'essentiel du FinOps et l'économie des coûts</td><td>LinkedIn</td></tr>
+            <tr><td>C4</td><td data-i18n="bom.c4">Certificat professionnel Google AI · Google AI Essentials</td><td>Google</td></tr>
+            <tr><td>C5</td><td>Generative AI for Project Managers</td><td>IBM</td></tr>
+            <tr><td>C6</td><td>Digital Product Management: Modern Fundamentals</td><td>University of Virginia</td></tr>
+            <tr><td>C7</td><td>The Product Owner Profession</td><td>SkillUp Online</td></tr>
+            <tr><td>C8</td><td>Introduction to Jira</td><td>Atlassian</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="rv">
+        <h2 data-i18n="c.h2">Parlez-nous de votre panne ou de votre projet.</h2>
+        <p class="lede" data-i18n="c.lede">Décrivez le problème en quelques lignes. On vous répond avec un premier avis et une estimation, sans engagement.</p>
+        <dl class="coords">
+          <div class="coord"><dt data-i18n="c.phone">Téléphone</dt><dd class="big"><a href="tel:+14382207582" id="cPhone">+1 (438) 220-7582</a></dd><button class="copy" type="button" data-copy="+1 (438) 220-7582" data-i18n="c.copy">Copier</button></div>
+          <div class="coord"><dt data-i18n="c.email">Courriel</dt><dd class="todo" id="cEmail" data-i18n="c.todo">à ajouter</dd><span></span></div>
+          <div class="coord"><dt data-i18n="c.area">Région</dt><dd data-i18n="c.region">Toronto, Ontario · à distance partout</dd><span></span></div>
+        </dl>
+      </div>
+
+      <form id="form" class="glass rv" data-tilt="3" novalidate>
+        <div class="row2">
+          <label for="fName"><span data-i18n="c.name">Nom</span><input id="fName" name="nom" autocomplete="name" required></label>
+          <label for="fMail"><span data-i18n="c.email">Courriel</span><input id="fMail" name="courriel" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="fType"><span data-i18n="c.need">Besoin</span>
+          <select id="fType" name="besoin">
+            <option data-i18n="o1">Réparation d'ordinateur</option>
+            <option data-i18n="o2">Logiciel sur mesure</option>
+            <option data-i18n="o3">Site web</option>
+            <option data-i18n="o4">Intégration de l'IA</option>
+            <option data-i18n="o5">Accompagnement Scrum ou FinOps</option>
+            <option data-i18n="o6">Autre</option>
+          </select>
+        </label>
+        <label for="fMsg"><span data-i18n="c.msg">Votre message</span><textarea id="fMsg" name="message" required data-i18n-attr="placeholder:c.ph" placeholder="Ex. : mon portable ne démarre plus depuis une mise à jour"></textarea></label>
+        <p class="err" id="fErr" role="alert"></p>
+        <div><button class="btn" type="submit" id="fSubmit" data-i18n="c.submit">Préparer ma demande</button></div>
+        <div class="out" id="fOut" hidden>
+          <pre id="fText"></pre>
+          <p id="fHint"></p>
+          <div><button class="btn ghost small" type="button" id="fCopy"></button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="nav-logo" href="#top">NeXel <small>Tech</small></a>
+      <p data-i18n="ft.tag">Réparation, logiciels, web et IA. Du câble au code, à Toronto et à distance.</p>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services" data-i18n="ft.s1">Réparation</a></li>
+        <li><a href="#services" data-i18n="u2.h">Logiciels sur mesure</a></li>
+        <li><a href="#services" data-i18n="u3.h">Sites web</a></li>
+        <li><a href="#services" data-i18n="b7">Intégration IA</a></li>
+        <li><a href="#finops">FinOps</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 data-i18n="ft.co">Entreprise</h5>
+      <ul>
+        <li><a href="#realisations" data-i18n="nav.work">Réalisations</a></li>
+        <li><a href="#methode" data-i18n="nav.method">Méthode</a></li>
+        <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+14382207582">+1 (438) 220-7582</a></li>
+        <li>Toronto, Ontario</li>
+        <li><a href="#contact" data-i18n="cta">Demander un diagnostic</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-mark" aria-hidden="true">NeXel</div>
+  <div class="wrap foot-bottom"><span>© 2026 NeXel Tech · Toronto, Ontario</span><span>v2</span></div>
+</footer>
+<script src="assets/js/site.js?v=1"></script>
+</body>
+</html>
