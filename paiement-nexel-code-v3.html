@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nexel Code · Choisir son accès — Paiement sécurisé</title>
+<meta name="description" content="Nexel Code : l'IA de codage qui tourne chez toi. Choisis ton accès, paie en ligne en toute sécurité. Prix en dollars US.">
+<meta name="theme-color" content="#04060f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#04060f; --card:rgba(16,24,52,.62); --line:rgba(120,150,255,.16);
+  --txt:#f2f5ff; --mut:#a7b6dd; --cyan:#22d3ee; --teal:#0ea5b7; --violet:#9d7bff;
+  --ok:#00ff9d; --gold:#ffd166; --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:"Space Grotesk",system-ui,sans-serif;overflow-x:hidden}
+::selection{background:var(--violet);color:#fff}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px;position:relative;z-index:2}
+
+/* ===== fond vivant ===== */
+.aurora{position:fixed;inset:-20%;z-index:0;pointer-events:none;filter:blur(70px);opacity:.55;
+  background:
+   radial-gradient(560px 380px at 18% 12%,#1246a0 0%,transparent 65%),
+   radial-gradient(640px 420px at 84% 8%,#4b2a9e 0%,transparent 65%),
+   radial-gradient(520px 420px at 55% 88%,#063f46 0%,transparent 65%);
+  animation:drift 26s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-3%,2.5%) scale(1.07)}}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(90,120,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(90,120,255,.05) 1px,transparent 1px);
+  background-size:46px 46px;
+  -webkit-mask-image:radial-gradient(ellipse 95% 62% at 50% 0%,#000 25%,transparent 78%);
+          mask-image:radial-gradient(ellipse 95% 62% at 50% 0%,#000 25%,transparent 78%)}
+.token{position:fixed;z-index:0;font-family:"JetBrains Mono",monospace;color:#33549f;opacity:.45;pointer-events:none;
+  animation:floaty linear infinite;white-space:nowrap}
+@keyframes floaty{from{transform:translateY(106vh) rotate(-4deg)}to{transform:translateY(-12vh) rotate(5deg)}}
+#glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:1;
+  background:radial-gradient(circle,rgba(80,120,255,.13),transparent 65%);transform:translate(-50%,-50%);left:50%;top:20%}
+
+/* ===== en-tête ===== */
+header{padding:24px 0 4px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:23px;letter-spacing:.3px}
+.logo em{font-style:normal;color:var(--cyan)} .logo .v{color:var(--violet)}
+.secure{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ok);
+  border:1px solid rgba(0,255,157,.35);padding:8px 14px;border-radius:999px;background:rgba(0,60,40,.35);backdrop-filter:blur(6px)}
+.secure::before{content:"● ";animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.2}}
+
+/* ===== héros ===== */
+.hero{padding:58px 0 8px;text-align:center}
+.kicker{font-family:"JetBrains Mono",monospace;color:var(--cyan);font-size:13px;letter-spacing:3px;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,6.4vw,68px);line-height:1.03;margin:16px auto 14px;max-width:880px;font-weight:700}
+.grad{background:linear-gradient(92deg,var(--cyan) 5%,var(--violet) 55%,#ff7ad9 105%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);font-size:clamp(16px,2vw,19.5px);max-width:700px;margin:0 auto;line-height:1.6}
+.cta-scroll{display:inline-block;margin-top:26px;padding:13px 26px;border-radius:999px;font-weight:700;text-decoration:none;color:#03121a;
+  background:linear-gradient(92deg,var(--teal),var(--cyan));box-shadow:0 12px 34px rgba(34,211,238,.35);transition:transform .2s}
+.cta-scroll:hover{transform:translateY(-2px) scale(1.02)}
+
+/* ===== terminal ===== */
+.term{max-width:780px;margin:38px auto 6px;background:rgba(3,6,18,.88);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 34px 90px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.06);text-align:left;overflow:hidden;backdrop-filter:blur(8px)}
+.term-bar{display:flex;gap:8px;align-items:center;padding:12px 15px;border-bottom:1px solid var(--line);background:rgba(10,16,36,.8)}
+.dot{width:12px;height:12px;border-radius:50%}
+.term-title{margin-left:8px;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mut)}
+.term-body{padding:19px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.9;min-height:200px}
+.term-body .p{color:var(--violet)} .term-body .k{color:var(--cyan)} .term-body .s{color:var(--gold)}
+.term-body .ok{color:var(--ok)} .term-body .dim{color:#6276ab}
+.caret{display:inline-block;width:9px;height:17px;background:var(--cyan);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+
+/* ===== sections ===== */
+section.blk{padding:58px 0 6px}
+h2.t{text-align:center;font-size:clamp(28px,4vw,42px);margin-bottom:10px}
+.sub{text-align:center;color:var(--mut);max-width:660px;margin:0 auto 32px;line-height:1.6}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+
+/* ===== cartes offres ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
+.card{--mx:50%;--my:50%;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 25px;display:flex;flex-direction:column;position:relative;backdrop-filter:blur(14px);
+  transform-style:preserve-3d;transition:border-color .25s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx) var(--my),rgba(120,170,255,.14),transparent 65%)}
+.card:hover::before{opacity:1}
+.card:hover{border-color:rgba(34,211,238,.55)}
+.card.hot{border-color:rgba(157,123,255,.65);box-shadow:0 0 0 1px rgba(157,123,255,.5),0 26px 70px rgba(157,123,255,.16)}
+.tag{position:absolute;top:16px;right:16px;background:linear-gradient(92deg,var(--teal),var(--cyan));color:#02141c;
+  font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.4px}
+.tag.v{background:linear-gradient(92deg,var(--violet),#e07be0);color:#fff}
+.card h3{font-size:22px;margin-bottom:3px}
+.who{color:var(--cyan);font-family:"JetBrains Mono",monospace;font-size:12.5px;margin-bottom:15px}
+.price{display:flex;align-items:baseline;gap:7px;margin-bottom:14px}
+.price b{font-size:42px;font-weight:700}
+.price span{color:var(--mut);font-size:14px}
+.desc{color:#d3ddf7;font-size:15.5px;line-height:1.6;margin-bottom:17px}
+.desc b{color:#fff}
+.feats{list-style:none;margin-bottom:24px;display:grid;gap:9px}
+.feats li{color:var(--mut);font-size:14.5px;padding-left:25px;position:relative;line-height:1.5}
+.feats li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.buy{margin-top:auto;display:block;text-align:center;font-weight:700;font-size:16px;padding:15px 16px;border-radius:13px;
+  border:1px solid var(--teal);color:var(--cyan);background:rgba(14,165,183,.08);cursor:pointer;font-family:inherit;width:100%;transition:.2s}
+.buy:hover{background:var(--teal);color:#fff;transform:translateY(-1px)}
+.buy.solid{background:linear-gradient(92deg,var(--teal),var(--cyan));color:#02141c;border:none;box-shadow:0 10px 28px rgba(34,211,238,.3)}
+.buy.solid:hover{filter:brightness(1.13);color:#02141c}
+.buy.v{background:linear-gradient(92deg,var(--violet),#e07be0);color:#fff;border:none;box-shadow:0 10px 28px rgba(157,123,255,.35)}
+
+/* compteur équipe */
+.team-box{background:rgba(5,9,26,.75);border:1px dashed rgba(90,130,255,.45);border-radius:15px;padding:18px;margin-bottom:19px}
+.team-box p{font-size:14.5px;color:#d3ddf7;line-height:1.6;margin-bottom:14px}
+.team-box p b{color:#fff}
+.counter{display:flex;align-items:center;gap:16px;justify-content:center}
+.counter button{width:48px;height:48px;border-radius:50%;border:1px solid var(--teal);background:rgba(14,165,183,.14);
+  color:var(--cyan);font-size:25px;cursor:pointer;line-height:1;transition:.15s}
+.counter button:hover{background:var(--teal);color:#fff;transform:scale(1.07)}
+.counter .n{font-size:32px;font-weight:700;min-width:54px;text-align:center}
+.counter .lbl{font-size:11.5px;color:var(--mut);text-align:center;font-family:"JetBrains Mono",monospace}
+.team-total{text-align:center;margin-top:13px;font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--mut)}
+.team-total b{color:var(--gold);font-size:20px}
+
+/* transparence */
+.truth{max-width:840px;margin:38px auto 0;background:rgba(0,50,34,.4);border:1px solid rgba(0,255,157,.4);border-radius:16px;
+  padding:20px 24px;text-align:center;backdrop-filter:blur(8px)}
+.truth p{font-size:15.5px;line-height:1.65;color:#dcf7ea}
+.truth .mono{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ok);margin-top:9px;letter-spacing:1px}
+
+/* étapes + code */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:28px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;backdrop-filter:blur(12px)}
+.step .num{font-family:"JetBrains Mono",monospace;color:var(--cyan);font-size:13px;letter-spacing:2px}
+.step h3{margin:9px 0 8px;font-size:18.5px}
+.step p{color:var(--mut);font-size:14.5px;line-height:1.6}
+.codebox{max-width:840px;margin:26px auto 0;background:rgba(3,6,18,.9);border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.codebox pre{padding:21px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.85;overflow-x:auto;color:#dbe6ff}
+.codebox .k{color:var(--cyan)} .codebox .s{color:var(--gold)} .codebox .f{color:#d3a6ff} .codebox .dim{color:#6276ab}
+
+.trust{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:40px 0 4px}
+.trust span{border:1px solid var(--line);background:rgba(12,23,56,.6);border-radius:999px;padding:9px 16px;font-size:13.5px;color:var(--mut);backdrop-filter:blur(6px)}
+.trust b{color:var(--txt)}
+footer{padding:36px 0 46px;text-align:center;color:var(--mut);font-size:13.5px;line-height:1.75}
+footer .mono{font-family:"JetBrains Mono",monospace;font-size:12px;color:#5f74a8}
+@media (prefers-reduced-motion:reduce){.token,.aurora{animation:none}.caret,.secure::before{animation:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div id="glow" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header>
+    <div class="logo">NeXel <em>Tech</em> · <span class="v">Nexel Code</span></div>
+    <div class="secure">paiement sécurisé · en direct</div>
+  </header>
+
+  <section class="hero">
+    <div class="kicker">// l'IA de codage qui tourne chez toi</div>
+    <h1>Choisis ton accès à <span class="grad">Nexel Code</span></h1>
+    <p>Chaque offre dit exactement ce que tu achètes : l'IA locale illimitée sur ta machine, les grandes IA quand il faut aller plus loin, et un prix clair — sans surprise.</p>
+    <a class="cta-scroll" href="#offres">Voir les accès ↓</a>
+
+    <div class="term" aria-hidden="true">
+      <div class="term-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="term-title">nexel-code — passerelle Bulle</span></div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+  </section>
+
+  <section class="blk" id="offres">
+    <h2 class="t">Les accès</h2>
+    <p class="sub">Prix en dollars américains (US $). Selon ton pays, Stripe t'affiche l'équivalent dans ta devise au moment de payer. Taxes en sus selon ta province ou ton pays.</p>
+
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Pass Jour</h3>
+        <div class="who">pour tester · 24 heures</div>
+        <div class="price"><b>3 $</b><span>US · paiement unique</span></div>
+        <p class="desc">Une journée complète pour essayer Nexel Code en conditions réelles, sur ton propre code : de quoi te faire une vraie idée, sans engagement.</p>
+        <ul class="feats">
+          <li>IA locale illimitée pendant 24 h, directement sur ta machine</li>
+          <li>Grandes IA en gamme éco pour les coups de pouce</li>
+          <li>2 $ d'usage de grandes IA inclus</li>
+          <li>Ton code sensible ne sort jamais de chez toi</li>
+        </ul>
+        <button class="buy" data-plan="pass-jour">Prendre le Pass Jour · 3 $</button>
+      </article>
+
+      <article class="card reveal">
+        <h3>Pass Semaine</h3>
+        <div class="who">pour un vrai projet · 7 jours</div>
+        <div class="price"><b>9 $</b><span>US · paiement unique</span></div>
+        <p class="desc">Sept jours pour mener un vrai morceau de projet avec l'assistant : le temps de voir ce qu'il change dans ta façon de coder, au quotidien.</p>
+        <ul class="feats">
+          <li>IA locale illimitée pendant 7 jours</li>
+          <li>Grandes IA en gamme éco</li>
+          <li>Usage de grandes IA inclus pour travailler sans compter à chaque ligne</li>
+          <li>Ton code sensible ne sort jamais de chez toi</li>
+        </ul>
+        <button class="buy" data-plan="pass-semaine">Prendre le Pass Semaine · 9 $</button>
+      </article>
+
+      <article class="card reveal">
+        <h3>Pack Léger</h3>
+        <div class="who">1 développeur · abonnement</div>
+        <div class="price"><b>14 $</b><span>US / mois</span></div>
+        <p class="desc">L'abonnement tranquille pour un développeur : l'essentiel des grandes IA chaque mois, et un plafond que TU fixes pour ne jamais dépasser ton budget.</p>
+        <ul class="feats">
+          <li>IA locale illimitée, en continu</li>
+          <li>Grandes IA jusqu'à la gamme milieu</li>
+          <li>6 $ d'usage inclus chaque mois</li>
+          <li>Au-delà : usage réel + 40 %, plafonné par toi — retour automatique au local, jamais de coupure sèche</li>
+        </ul>
+        <button class="buy" data-plan="pack-leger">S'abonner · 14 $/mois</button>
+      </article>
+
+      <article class="card hot reveal">
+        <div class="tag v">LE PLUS COMPLET</div>
+        <h3>Solo</h3>
+        <div class="who">1 développeur · abonnement</div>
+        <div class="price"><b>19 $</b><span>US / mois</span></div>
+        <p class="desc">Tout Nexel Code pour un développeur : la gamme complète des grandes IA, y compris la route qualité pour les tâches difficiles, sans te limiter.</p>
+        <ul class="feats">
+          <li>IA locale illimitée, en continu</li>
+          <li>Gamme complète des grandes IA, route qualité incluse</li>
+          <li>10 $ d'usage inclus chaque mois</li>
+          <li>Fin d'abonnement = les grandes IA s'arrêtent, ton éditeur et tes fichiers restent à toi</li>
+        </ul>
+        <button class="buy v" data-plan="solo">S'abonner · 19 $/mois</button>
+      </article>
+
+      <article class="card reveal">
+        <div class="tag">PAR DÉVELOPPEUR</div>
+        <h3>Équipe</h3>
+        <div class="who">plusieurs développeurs · abonnement</div>
+        <div class="price"><b>18 $</b><span>US / développeur / mois</span></div>
+        <p class="desc">Nexel Code pour toute ton équipe : chaque développeur a son propre accès complet. Le prix est <b>par personne</b> — une équipe de 10 paie 10 × 18 $ = 180 $ par mois.</p>
+        <div class="team-box">
+          <p><b>Combien de développeurs compte ton équipe ?</b><br>Choisis le nombre : c'est ce nombre qui fixe le total. Chaque développeur reçoit son accès, et le chef d'équipe peut suspendre ou réactiver un accès en un clic.</p>
+          <div class="counter">
+            <button type="button" id="minus" aria-label="Un développeur de moins">−</button>
+            <div><div class="n" id="teamN">5</div><div class="lbl">développeurs</div></div>
+            <button type="button" id="plus" aria-label="Un développeur de plus">+</button>
+          </div>
+          <div class="team-total">Total : <b id="teamTotal">90 $ US / mois</b></div>
+        </div>
+        <ul class="feats">
+          <li>Un accès complet par développeur (gamme complète)</li>
+          <li>IA locale illimitée pour chacun</li>
+          <li>Gestion par le chef d'équipe : suspendre / réactiver en un clic</li>
+        </ul>
+        <button class="buy solid" data-plan="equipe" id="buyTeam">S'abonner pour 5 développeurs · 90 $/mois</button>
+      </article>
+    </div>
+
+    <div class="truth reveal">
+      <p><b>Transparence :</b> cette page est celle de Nexel Tech, mais <b>tous les paiements sont générés et traités par Stripe</b>, notre prestataire de paiement sécurisé. Nexel Tech ne reçoit, ne voit et ne conserve jamais vos numéros de carte.</p>
+      <div class="mono">POWERED BY STRIPE · PAIEMENTS GÉNÉRÉS PAR STRIPE</div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="t">Comment ça marche</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="num">ÉTAPE 01</div><h3>Tu choisis ton accès</h3><p>Un pass ou un abonnement, et pour l'Équipe, le nombre de développeurs. Le total est affiché avant de payer — rien n'est caché.</p></div>
+      <div class="step reveal"><div class="num">ÉTAPE 02</div><h3>Tu paies en sécurité</h3><p>Le paiement passe par Stripe, le même système que des millions d'entreprises. Ta carte n'arrive jamais sur nos serveurs.</p></div>
+      <div class="step reveal"><div class="num">ÉTAPE 03</div><h3>Tu reçois ta clé d'API</h3><p>Ta clé personnelle active Nexel Code et la passerelle Bulle, qui envoie chaque demande au bon modèle — le petit modèle local gratuit, ou la grande IA quand il le faut.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <h2 class="t">Sous le capot : l'API fait le travail</h2>
+    <p class="sub">Pas de liens copiés-collés : notre page parle directement à l'API de paiement. Voici, en vrai, l'appel qui ouvre un paiement Équipe pour 10 développeurs.</p>
+    <div class="codebox reveal"><pre><span class="dim">// Créer le paiement — offre Équipe, 10 développeurs</span>
+<span class="k">const</span> session = <span class="k">await</span> stripe.checkout.sessions.<span class="f">create</span>({
+  mode: <span class="s">'subscription'</span>,
+  line_items: [{
+    price: <span class="s">'PRIX_EQUIPE_PAR_DEVELOPPEUR'</span>,  <span class="dim">// 18 $ US</span>
+    quantity: <span class="s">10</span>                          <span class="dim">// ← le nombre de développeurs</span>
+  }],
+  success_url: <span class="s">'https://nexel.example/merci'</span>
+});
+<span class="dim">// → total : 10 × 18 $ = 180 $ US / mois · paiement sécurisé par Stripe</span></pre></div>
+  </section>
+
+  <div class="trust">
+    <span><b>Paiement sécurisé</b> par Stripe</span>
+    <span><b>Prix en $ US</b>, équivalent affiché selon ton pays</span>
+    <span><b>Versement</b> en 3 jours ouvrables</span>
+    <span><b>Sans engagement</b> sur les pass</span>
+  </div>
+
+  <footer>
+    Nexel Tech — entreprise individuelle enregistrée en Ontario (BIN 1001183506)<br>
+    216 Gerrard Street East, Toronto · +1 (438) 220-7582
+    <div class="mono">checkout.session · 200 OK · Paiements générés et traités par Stripe</div>
+  </footer>
+</div>
+
+<script>
+/* fond : symboles du code qui flottent */
+(function(){
+  var syms=['{ }','</>','$_','fn()','=>','200 OK','pk_live_','{ json }','git push','AI','const','await','$$$','[ ]',';'];
+  for(var i=0;i<15;i++){
+    var s=document.createElement('span');s.className='token';s.textContent=syms[i%syms.length];
+    s.style.left=(Math.random()*96)+'%'; s.style.top='0';
+    s.style.fontSize=(11+Math.random()*13)+'px';
+    s.style.animationDuration=(28+Math.random()*30)+'s';
+    s.style.animationDelay=(-Math.random()*40)+'s';
+    document.body.appendChild(s);
+  }
+})();
+
+/* halo qui suit la souris */
+(function(){
+  var g=document.getElementById('glow');
+  document.addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';});
+})();
+
+/* cartes : inclinaison 3D douce + projecteur */
+document.querySelectorAll('.card').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect();
+    var x=e.clientX-r.left, y=e.clientY-r.top;
+    card.style.setProperty('--mx',(x/r.width*100)+'%');
+    card.style.setProperty('--my',(y/r.height*100)+'%');
+    card.style.transform='perspective(900px) rotateY('+((x/r.width-.5)*5)+'deg) rotateX('+((.5-y/r.height)*5)+'deg)';
+  });
+  card.addEventListener('mouseleave',function(){card.style.transform='';});
+});
+
+/* apparition au défilement */
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+
+/* terminal : la passerelle Bulle crée le paiement, en direct */
+(function(){
+  var el=document.getElementById('termBody');
+  var lines=[
+    '<span class="p">$</span> curl -X POST api.nexel.tech/bulle/checkout',
+    '<span class="dim">  -H</span> <span class="s">"Authorization: Bearer pk_live_…"</span>',
+    '<span class="dim">  -d</span> <span class="s">\'{ "plan": "equipe", "developpeurs": 10 }\'</span>',
+    '<span class="ok">→ 200 OK</span> { "total": "180.00 USD", "par_developpeur": "18.00" }',
+    '<span class="dim"># le bon modèle pour chaque demande, le code sensible reste chez toi</span>'
+  ];
+  function plain(t){var d=document.createElement('div');d.innerHTML=t;return d.textContent;}
+  var li=0,ci=0,html='';
+  function type(){
+    if(li>=lines.length){el.innerHTML=html+'<span class="caret"></span>';return;}
+    var p=plain(lines[li]); ci++;
+    el.innerHTML=html+p.slice(0,ci)+'<span class="caret"></span>';
+    if(ci>=p.length){html+=lines[li]+'<br>';li++;ci=0;setTimeout(type,360);}
+    else setTimeout(type,15);
+  }
+  type();
+})();
+
+/* compteur Équipe */
+(function(){
+  var n=5,price=18;
+  var nEl=document.getElementById('teamN'),tEl=document.getElementById('teamTotal'),b=document.getElementById('buyTeam');
+  function render(){
+    nEl.textContent=n;
+    tEl.textContent=(n*price)+' $ US / mois';
+    b.textContent='S\'abonner pour '+n+' développeur'+(n>1?'s':'')+' · '+(n*price)+' $/mois';
+  }
+  document.getElementById('minus').onclick=function(){if(n>1){n--;render();}};
+  document.getElementById('plus').onclick=function(){if(n<200){n++;render();}};
+  render();
+})();
+
+/* boutons d'achat : branchement API (sessions Checkout) */
+document.querySelectorAll('.buy').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    /* BRANCHEMENT : POST /bulle/checkout { plan, quantite } → ouvrir session.url */
+    btn.textContent='Ouverture du paiement sécurisé…';
+    setTimeout(function(){btn.textContent='Paiement bientôt ouvert — branchement en cours';},600);
+  });
+});
+</script>
+</body>
+</html>
